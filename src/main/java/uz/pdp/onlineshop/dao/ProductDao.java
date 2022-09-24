@@ -59,7 +59,8 @@ public class ProductDao {
     public boolean editProduct(Product product){
 
         String sql = "update product set id = '"+ product.getId() +"', name = '"+ product.getName() +"'," +
-                " price = '"+ product.getPrice() +"', category_id = '"+ product.getCategoryId() +"',maker_id = '"+ product.getMakerId() +"' ";
+                " price = '"+ product.getPrice() +"', category_id = '"+ product.getCategoryId() +"',maker_id = '"+ product.getMakerId() +"'" +
+                "where id = '"+ product.getId() +"'";
 
         return jdbcTemplate.update(sql)>0;
 

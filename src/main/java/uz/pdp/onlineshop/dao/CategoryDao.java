@@ -39,7 +39,7 @@ public class CategoryDao {
     }
 
     public void editCategory(Category category){
-        String sql = "update category set name = '"+ category.getName() +"', description = '"+ category.getDescription() +"'";
+        String sql = "update category set name = '"+ category.getName() +"', description = '"+ category.getDescription() +"' where id = '"+ category.getId() +"'";
         jdbcTemplate.execute(sql);
     }
 }

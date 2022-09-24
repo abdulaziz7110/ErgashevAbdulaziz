@@ -15,7 +15,7 @@ public class MakerDao {
 
     public List<Maker> makerList(){
 
-        String sql = "select m.id, m.name from maker m";
+        String sql = "select m.id, m.name, m.country from maker m";
 
         return jdbcTemplate.query(sql,(rs,row)->{
             return Maker.builder()
