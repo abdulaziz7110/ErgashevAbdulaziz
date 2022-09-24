@@ -17,9 +17,19 @@
 
 
         <div class="input-group">
-        <label for="name"> Name OF Product </label>
-            <input type="text" name="name" id="name">
+            <label>
+                <input hidden name="name" value="${id}">
+            </label>
         </div>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price">
+
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+
+
+        <input type="text">
     </div>
 </body>
 </html>

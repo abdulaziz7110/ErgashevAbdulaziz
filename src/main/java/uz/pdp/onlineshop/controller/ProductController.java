@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import uz.pdp.onlineshop.dao.CategoryDao;
 import uz.pdp.onlineshop.dao.ProductDao;
 
 @Controller
@@ -14,6 +15,7 @@ import uz.pdp.onlineshop.dao.ProductDao;
 public class ProductController {
 
     private final ProductDao productDao;
+    private final CategoryDao categoryDao;
 
     @GetMapping
     public String viewProduct(Model m){
@@ -38,8 +40,11 @@ public class ProductController {
             m.addAttribute("id",id);
             m.addAttribute("categoryList");
             return "product-form";
-        }else {}
-        return "product-form";
+        }else {
+            m.addAttribute("categoryList",categoryDao.categoryList());
+            return "product-form";
+        }
+
 
     }
 }
