@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Maker {
     private Integer id;
-    private String companyName;
+    private String name;
     private String description;
     private String country;
 }

@@ -1,0 +1,43 @@
+create table category
+(
+    id          serial,
+    name        varchar,
+    description varchar
+);
+
+alter table category
+    owner to postgres;
+
+create unique index category_id_uindex
+    on category (id);
+
+create table maker
+(
+    id          serial
+        constraint maker_pk
+            primary key,
+    name        varchar not null,
+    description varchar,
+    country     varchar not null
+);
+
+alter table maker
+    owner to postgres;
+
+create table product
+(
+    id          serial,
+    name        varchar,
+    price       double precision,
+    description text,
+    category_id integer
+        constraint product_category_id_fk
+            references category (id),
+    "maker_id " integer
+        constraint product_maker_id_fk
+            references maker
+);
+
+alter table product
+    owner to postgres;
+

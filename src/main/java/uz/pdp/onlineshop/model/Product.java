@@ -15,5 +15,7 @@ public class Product {
     private Double price;
     private String description;
     private Category category;
+    private Integer categoryId;
     private Maker maker;
+    private Integer makerId;
 }

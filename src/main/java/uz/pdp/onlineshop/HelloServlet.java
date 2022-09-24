@@ -12,7 +12,7 @@ public class HelloServlet{
     @GetMapping
     public String getIndex(){
 
-        return "index";
+        return "redirect:/products";
     }
 
 }
